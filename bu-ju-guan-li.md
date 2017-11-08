@@ -56,76 +56,80 @@ if __name__ == '__main__':
 
 
 
-## addStretch方法<a id="orgheadline35"></a>
+## addStretch方法
 
 插入一个分隔符，也就是设计器里面的弹簧。
 
-## QGridLayout<a id="orgheadline36"></a>
+## QGridLayout
 
 在tkinter中有个grid方法，也就是网格布局，同样pyqt中也有个网格布局对象QGridLayout。QGridLayout的用法和上面QBoxLayout类似，除了 **addWidget** 方法后面还可以接受两个额外的参数表示几行几列。
 
-请看到下面的例子。这个例子很好地演示了QGridLayout的使用。其中 `(i-1)//3` 即该数对3取商，本来的1 2 3 4 5 6&#x2026;将变成0 0 0 1 1 1 2 2 2&#x2026;正好对应网格中的几行，而 `(i-1)%3` 即该数对3取余，本来的1 2 3 4 5 6&#x2026;将变成0 1 2 0 1 2 0 1 2&#x2026;正好对应网格中的几列的概念。
+请看到下面的例子。这个例子很好地演示了QGridLayout的使用。其中 `(i-1)//3` 即该数对3取商，本来的1 2 3 4 5 6…将变成0 0 0 1 1 1 2 2 2…正好对应网格中的几行，而 (i-1)%3 即该数对3取余，本来的1 2 3 4 5 6…将变成0 1 2 0 1 2 0 1 2…正好对应网格中的几列的概念。
 
+【layout/gridlayout】
 ```python
+
 from PyQt5.QtWidgets import QApplication,QWidget,QPushButton,QGridLayout
 
 class Form(QWidget):
-def __init__(self):
-super().__init__()
-bodyLayout = QGridLayout()
-for i in range(1,10):
-button = QPushButton(str(i))
-bodyLayout.addWidget(button,(i-1)//3,(i-1)%3)
-print(i,(i-1)//3,(i-1)%3)
-self.setLayout(bodyLayout)
-self.setWindowTitle("the grid layout")
-self.show()
+    def __init__(self):
+        super().__init__()
+        bodyLayout = QGridLayout()
+        for i in range(1,10):
+            button = QPushButton(str(i))
+            bodyLayout.addWidget(button,(i-1)//3,(i-1)%3)
+            print(i,(i-1)//3,(i-1)%3)
+        self.setLayout(bodyLayout)
+        self.setWindowTitle("the grid layout")
+        self.show()
 
 
 if __name__ == '__main__':
-import sys
-app = QApplication(sys.argv)
-screen = Form()
-sys.exit(app.exec_())
+    import sys
+    app = QApplication(sys.argv)
+    screen = Form()
+    sys.exit(app.exec_())
+
 ```
 
-## QFormLayout<a id="orgheadline37"></a>
-
+## QFormLayout
 QFormLayout，表单布局，常用于提交某个配置信息的表单。
 
 请看到下面的例子。这个例子来自pyqt5源码examples文件夹layouts文件夹里面的basiclayouts.py文件，做了简化主要用于演示表单布局。
 
+【layout/basiclayouts】
 ```python
+
 from PyQt5.QtWidgets import (QApplication, QDialog,QDialogButtonBox, QFormLayout, QGroupBox,QLabel, QLineEdit, QSpinBox,QVBoxLayout,QTextEdit)
 
 
 class Dialog(QDialog):
-def __init__(self):
-super().__init__()
-self.createFormGroupBox()
-buttonBox = QDialogButtonBox(QDialogButtonBox.Ok | QDialogButtonBox.Cancel)
-buttonBox.accepted.connect(self.accept)
-buttonBox.rejected.connect(self.reject)
-mainLayout = QVBoxLayout()
-mainLayout.addWidget(self.formGroupBox)
-mainLayout.addWidget(buttonBox)
-self.setLayout(mainLayout)
-self.setWindowTitle("user info")
+    def __init__(self):
+        super().__init__()
+        self.createFormGroupBox()
+        buttonBox = QDialogButtonBox(QDialogButtonBox.Ok | QDialogButtonBox.Cancel)
+        buttonBox.accepted.connect(self.accept)
+        buttonBox.rejected.connect(self.reject)
+        mainLayout = QVBoxLayout()
+        mainLayout.addWidget(self.formGroupBox)
+        mainLayout.addWidget(buttonBox)
+        self.setLayout(mainLayout)
+        self.setWindowTitle("user info")
 
-def createFormGroupBox(self):
-self.formGroupBox = QGroupBox("your infomation")
-layout = QFormLayout()
-layout.addRow(QLabel("name:"), QLineEdit())
-layout.addRow("age:", QSpinBox())
-layout.addRow(QLabel("other infomation:"), QTextEdit())
-self.formGroupBox.setLayout(layout)
+    def createFormGroupBox(self):
+        self.formGroupBox = QGroupBox("your infomation")
+        layout = QFormLayout()
+        layout.addRow(QLabel("name:"), QLineEdit())
+        layout.addRow("age:", QSpinBox())
+        layout.addRow(QLabel("other infomation:"), QTextEdit())
+        self.formGroupBox.setLayout(layout)
 
 
 if __name__ == '__main__':
-import sys
-app = QApplication(sys.argv)
-dialog = Dialog()
-sys.exit(dialog.exec_())
+    import sys
+    app = QApplication(sys.argv)
+    dialog = Dialog()
+    sys.exit(dialog.exec_())
 ```
 
 这里 `QDialog` 类和 `QDialogButtonBox` 类我们且不去管他，QDialog类和下面的accept和reject方法有关，而QDialogButtonBox和最下面的两个按钮和绑定的喜好accepted和rejected有关。
