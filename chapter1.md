@@ -32,7 +32,7 @@ sys.exit(myapp.exec_())
 
 最后我们看到系统要退出是调用的myapp实例的 `exec_` 方法。
 
-## 加上图标<a id="orgheadline7"></a>
+## 加上图标
 
 ```python
 import sys
