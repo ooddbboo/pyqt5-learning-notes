@@ -1,8 +1,6 @@
 # 第一个例子
 
-
-
-## 窗口<a id="orgheadline6"></a>
+## 窗口
 
 请看到下面的代码：
 
@@ -24,7 +22,7 @@ mywidget.show()
 sys.exit(myapp.exec_())
 ```
 
-首先导入sys宏包，这是为了后面接受sys.argv参数。关于引入这里值得一提的是: 很多pyqt4原放在QtGui里面的一些QWidget在pyqt5里面都放入QtWidgets里面去了。
+首先导入sys宏包，这是为了后面接受sys.argv参数。
 
 接下来我们定义了MyWidget类，它继承自QWidget类。然后通过QWidget类的 `setGeometry` 方法来调整窗口的左顶点的坐标位置和窗口的大小。
 
