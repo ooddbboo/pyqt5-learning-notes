@@ -1,8 +1,7 @@
-# 配置文件管理<a id="orgheadline33"></a>
+# 配置文件管理
+pyqt5里的QtCore子模块里提供了 **QSettings** 类来方便管理软件的配置文件。
 
-pyqt4和pyqt5里的QtCore子模块里提供了 **QSettings** 类来方便管理软件的配置文件。
-
-## QSettings构造函数<a id="orgheadline27"></a>
+## QSettings构造函数
 
 一般先推荐把OrganizationName和ApplicationName设置好。
 
@@ -22,52 +21,50 @@ QSettings(parent)
 fromat如果取默认的NativeFormat那么具体软件配置文件的安装目录如下：
 
 - 如果是linux系统，比如上面的例子具体配置文件就是：
-
+```
 /home/wanze/.config/Wise/wise.conf
-
+```
 - 如果是windows系统，那么上面的例子具体就是：
-
+```
 HKEY_CURRENT_USER\Software\Wise\wise
-
+```
 windows下配置是放在注册表里面的。
 
-- 苹果系统还需要一个OrganizationDomain变量去set，然后苹果系统我非常不熟悉，这里略过了。
 
-## IniFormat<a id="orgheadline30"></a>
+## IniFormat
 
 如果你希望配置文件都以ini形式存储，那么你需要采取如下格式初始化配置文件对象：
-
+```
 self.settings = QSettings(QSettings.IniFormat,QSettings.UserScope,"Wise","wise")
-
-这样配置文件就在这里： `/home/wanze/.config/Wise/wise.ini` 。这里是linux系统的情况，苹果系统略过，windows系统官方文档给出的是： `%APPDATA%\Wise\wise.ini` ，这个 `%APPDATA%` 我不清楚具体在哪里。
+```
+这样配置文件就在这里： `/home/wanze/.config/Wise/wise.ini` 。这里是linux系统的情况，windows系统官方文档给出的是： `%APPDATA%\Wise\wise.ini` ，这个 `%APPDATA%` 我不清楚具体在哪里。
 
 你可以通过调用 `self.settings.fileName()` 来查看该配置文件对象具体的路径所在。
 
 推荐配置文件作为mainwindow实例的属性如上self.settings来确定，然后所有的子窗体都可以通过调用self来获得同一的配置文件对象。
 
-### ini文件存放DIY<a id="orgheadline28"></a>
+### ini文件存放DIY
 
 如果你希望ini文件放在你喜欢的地方，下面是配置文件构造函数的第三种形式：
-
+```
 QSettings("wise.ini",QSettings.IniFormat)
-
+```
 第一个参数是你的配置文件名，第二个参数是format。如上相对路径的话则是从你目前软件运行时的文件夹算起。
 
 你可以通过调用 `settings.fileName()` 来看看该配置文件的具体所在。
 
-### ini文件注意事项<a id="orgheadline29"></a>
+### ini文件注意事项
 
 ini文件是大小写不敏感的，所以尽量避免两个变量名相近只是大小写不同。
 
 不要使用“\\”和“/”。windows里\\会转换成/，而“/”使用来表示配置文件中分组关系的。
 
-## 存值和读值<a id="orgheadline31"></a>
-
+## 存值和读值
 配置文件对象建立之后你就可以很方便地存放一些值和读取值了。存值用 `setValue` 方法，取值用 `value` 方法。如下所示：
-
+```
 settings.setValue("editor/wrapMargin", 68)
 margin = self.settings.value("editor/wrapMargin")
-
+```
 如果setValue的键在配置文件对象中已经存在，那么将更新值，如果要修改立即生效，可以使用 `sync` 方法，sync方法不接受参数，就是立即同步配置文件中的更新。
 
 `value` 方法第一个参数是“键”，第二个参数是可选值，也就是如果没找到这个键，那么将会返回的值。一般最好还是写上，否则可能配置文件不在了，你就会发生读取错误。
@@ -79,12 +76,13 @@ margin = self.settings.value("editor/wrapMargin")
 - **allkeys:** 不接受参数，返回所有的“键“。
 - **clear:** 不接受参数，清除所有的“键”。
 
-## 群组管理<a id="orgheadline32"></a>
-
+## 群组管理
+```
 settings.setValue("editor/wrapMargin", 68)
-
+```
 如上例子所示“/”表示数据结构中的分组，如果有很多值都有相同的前缀，也就是同属一组，那么可以使用beginGroup方法和endGroup方法来管理。如下所示：
-
+```
 settings.beginGroup("editor")
 settings.setValue("wrapMargin", 68)
 settings.engGroup()
+```
