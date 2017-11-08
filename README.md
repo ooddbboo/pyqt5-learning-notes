@@ -1,3 +1,7 @@
-# My Awesome Book
+# pyqt5学习笔记
 
-This file file serves as your book's preface, a great place to describe your book's content and ideas.
+历史原因以前学过一段时间，现在重拾说起来本文算是第三次修订了。
+
+1. 本文完全基于python3和pyqt5，也就是关于qt4的讨论全部删去了。
+
+2. 
