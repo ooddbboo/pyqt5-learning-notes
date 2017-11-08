@@ -1,3 +1,7 @@
-# My Awesome Book
+# pyqt5学习笔记
+本文例子完全基于pyqt5和python3。
 
-This file file serves as your book's preface, a great place to describe your book's content and ideas.
+Qt内容较多，本文也无意于写个API汇总，具体请查阅官方文档。本文只就pyqt5编程一些基本核心的概念讨论之。
+
+
+
