@@ -1,4 +1,4 @@
-## 参考资料<a id="orgheadline49"></a>
+## 参考资料
 
 1. pyqt4教程，[PyQt4\_Tutorial](http://blog.cx125.com/books/PyQt4_Tutorial/)
 

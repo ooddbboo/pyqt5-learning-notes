@@ -9,4 +9,6 @@
 * [附录](fu-lu.md)
   * [安装和配置](fu-lu/an-zhuang-he-pei-zhi.md)
   * [参考资料](fu-lu/can-kao-zi-liao.md)
+* [快捷键管理](kuai-jie-jian-guan-li.md)
+* [国际化支持](guo-ji-hua-zhi-chi.md)
 
