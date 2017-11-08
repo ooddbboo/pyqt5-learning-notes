@@ -1,10 +1,6 @@
-# First Chapter
+# 第一个例子
 
 
-
-
-
-# beginning<a id="orgheadline18"></a>
 
 ## 窗口<a id="orgheadline6"></a>
 
