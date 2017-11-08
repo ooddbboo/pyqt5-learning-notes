@@ -1,8 +1,7 @@
 # 第一个例子
 
 ## 窗口
-
-请看到下面的代码（beginning-first01）：
+【beginning-first01】
 
 ```python
 import sys
@@ -33,6 +32,7 @@ sys.exit(myapp.exec_())
 最后我们看到系统要退出是调用的myapp实例的 `exec_` 方法。
 
 ## 加上图标
+【beginning-first02】
 
 ```python
 import sys
@@ -57,7 +57,8 @@ sys.exit(myapp.exec_())
 
 为了简单起见这个程序就使用了QWidget类的 `resize` 方法来设置窗体的大小。
 
-## 弹出提示信息<a id="orgheadline8"></a>
+## 弹出提示信息
+【beginning-first03】
 
 ```python
 import sys
@@ -85,7 +86,8 @@ sys.exit(myapp.exec_())
 
 这样你的鼠标停放在窗口上一会儿会弹出一小段提示文字。
 
-## 关闭窗体时询问<a id="orgheadline9"></a>
+## 关闭窗体时询问
+【beginning-first04】
 
 ```python
 import sys
@@ -124,7 +126,8 @@ sys.exit(myapp.exec_())
 这段代码和前面代码的不同就是重新定义了 `colseEvent` 事件。这段代码的核心就是QtGui类的QMessageBox类的question方法，这个方法将会弹出一个询问窗体。这个方法接受四个参数：第一个参数是这个窗体所属的母体，这里就是self也就是实例mywidget；第二个参数是弹出窗体的标题；第三个参数是一个标准button；第四个参数也是一个标准button，是默认（也就是按enter直接选定的）的button。然后这个方法返回的是那个被点击了的标准button的标识符，所以后面和标准 `QMessageBox.Yes`
  比较了，然后执行event的accept方法。
 
-## 屏幕居中显示窗体<a id="orgheadline10"></a>
+## 屏幕居中显示窗体
+【beginning-first05】
 
 ```python
 import sys
@@ -177,13 +180,15 @@ QDesktopWidget类的 `screenGeometry` 方法返回一个量，这个量的width�
 
 整个函数的作用效果就是将这个窗体居中显示。
 
-## QMainWindow类<a id="orgheadline11"></a>
+## QMainWindow类
 
 QtGui.QMainWindow类提供应用程序主窗口，可以创建一个经典的拥有状态栏、工具栏和菜单栏的应用程序骨架。（之前使用的是QWidget类，现在换成QMainWindow类。）
 
 前面第一个例子都是用的QtGui.QWidget类创建的一个窗体。关于QWidget和QMainWindow这两个类的区别 [根据这个网站](http://stackoverflow.com/questions/3298792/whats-the-difference-between-qmainwindow-and-qwidget-and-qdialog) 得出的结论是：QWdget类在Qt中是所有可画类的基础（这里的意思可能是窗体的基础吧。） 任何基于QWidget的类都可以作为独立窗体而显示出来而不需要母体（parent）。
 
 QMainWindow类是针对主窗体一般需求而设计的，它预定义了菜单栏状态栏和其他widget（窗口小部件） 。因为它继承自QWidget，所以前面谈及的一些属性修改都适用于它。那么首先我们将之前的代码中的QWidget类换成QMainWindow类。
+
+【beginning-first06】
 
 ```python
 import sys
@@ -228,7 +233,8 @@ sys.exit(myapp.exec_())
 
 现在程序运行情况良好，我们继续加点东西进去。
 
-## 加上状态栏<a id="orgheadline12"></a>
+## 加上状态栏
+【beginning-first07】
 
 ```python
 import sys
@@ -276,7 +282,8 @@ sys.exit(myapp.exec_())
 
 如果你希望这段代码在 `__init__` 方法里面，那么具体实现过程也与上面描述的类似。
 
-## 加上菜单栏<a id="orgheadline13"></a>
+## 加上菜单栏
+【beginning-first08】
 
 ```python
 import sys
@@ -345,7 +352,7 @@ sys.exit(myapp.exec_())
 
 在这里这个动作对象，就是菜单的下拉选项，如果我们用鼠标点击一下的话，将会触发 `triggered` 信号，如果我们connect方法连接到某个槽上（或者某个你定义的函数），那么将会触发这个函数的执行。下面就信号－槽机制详细说明之。
 
-## 信号－槽机制<a id="orgheadline14"></a>
+## 信号－槽机制
 
 GUI程序一般都引入一种事件和信号机制，well，简单来说就是一个循环程序，这个循环程序等到某个时刻程序会自动做某些事情比如刷新程序界面啊，或者扫描键盘鼠标之类的，等用户点击鼠标或者按了键盘之后，它会接受这个信号然后做出相应的反应。
 
