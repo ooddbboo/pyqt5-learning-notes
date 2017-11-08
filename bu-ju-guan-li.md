@@ -1,9 +1,8 @@
 
-# 布局管理<a id="orgheadline38"></a>
-
+# 布局管理
 布局管理是GUI设计中不可回避的一个话题，这里详细讨论下pyqt的布局管理。正如前所述及，pyqt5用于布局管理的类都移到了QtWidgets子模块那里了，首先是最基本的 `QHBoxLayout` 和 `QVBoxLayout` 。
 
-## QBoxLayout<a id="orgheadline34"></a>
+## QBoxLayout
 
 `QHBoxLayout` 和 `QVBoxLayout` 一个是横向排布，一个是竖向排布。它们的使用方法如下所示：
 
@@ -14,47 +13,48 @@ self.setLayout(mainLayout)
 
 Layout对象就好像一个封装器，Layout里面还可以有Layout，当然还有其他一些窗体子单元，都通过 `addWidget` 方法来确立封装关系。最后主母窗口主要接受一个Layout对象，使用的是 `setLayout` 方法。
 
+【layout/hello】
 ```python
+
 from PyQt5.QtWidgets import QApplication,QWidget,QLabel,QVBoxLayout,QPushButton,QLineEdit, QMessageBox
 
 class Form(QWidget):
-def __init__(self):
-super().__init__()
-nameLabel = QLabel("Name:")
-self.nameLine = QLineEdit()
-self.submitButton = QPushButton("Submit")
-bodyLayout = QVBoxLayout()
-bodyLayout.addWidget(nameLabel)
-bodyLayout.addWidget(self.nameLine)
-bodyLayout.addWidget(self.submitButton)
+    def __init__(self):
+        super().__init__()
+        nameLabel = QLabel("Name:")
+        self.nameLine = QLineEdit()
+        self.submitButton = QPushButton("Submit")
+        bodyLayout = QVBoxLayout()
+        bodyLayout.addWidget(nameLabel)
+        bodyLayout.addWidget(self.nameLine)
+        bodyLayout.addWidget(self.submitButton)
 
-self.submitButton.clicked.connect(self.submit)
+        self.submitButton.clicked.connect(self.submit)
 
-self.setLayout(bodyLayout)
-self.setWindowTitle("Hello Qt")
-self.show()
+        self.setLayout(bodyLayout)
+        self.setWindowTitle("Hello Qt")
+        self.show()
 
-def submit(self):
-name = self.nameLine.text()
+    def submit(self):
+        name = self.nameLine.text()
 
-if name == "":
-QMessageBox.information(self, "Empty Field",
-"Please enter a name.")
-return
-else:
-QMessageBox.information(self, "Success!",
-"Hello %s!" % name)
+        if name == "":
+            QMessageBox.information(self, "Empty Field",
+                                    "Please enter a name.")
+            return
+        else:
+            QMessageBox.information(self, "Success!",
+                                    "Hello %s!" % name)
 
 if __name__ == '__main__':
-import sys
-app = QApplication(sys.argv)
-screen = Form()
-sys.exit(app.exec_())
+    import sys
+    app = QApplication(sys.argv)
+    screen = Form()
+    sys.exit(app.exec_())
+
 ```
 
-pyqt4版本就是把头引入语句改成
 
-from PyQt4.QtGui import ...
 
 ## addStretch方法<a id="orgheadline35"></a>
 
