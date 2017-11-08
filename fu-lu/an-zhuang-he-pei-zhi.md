@@ -1,14 +1,12 @@
 ## 安装和配置<a id="orgheadline4"></a>
 
-### 安装pyqt5<a id="orgheadline2"></a>
+### ubuntu下
 
-就ubuntu下安装pyqt5是很简单的，如下所示：
-
-```sh
-sudo apt-get install python3-pyqt5
+就是利用pip3 安装之：
+```
+pip3 install pyqt5
 ```
 
-如果你使用的是默认的python3版本的话，否则你可能需要手工编译pyqt5。
 
 其中安装Qt5不需要我们多费心，请确保下面几个软件包安装上去了（参考了 [这个网页](http://askubuntu.com/questions/508503/whats-the-development-package-for-qt5-in-14-04) 和 [这个网页](http://askubuntu.com/questions/609238/error-pyqt5-requires-qt-v5-0-or-later) ）:
 
@@ -35,26 +33,3 @@ sudo apt-get install pyqt5-dev-tools
 5.2.1
 
 本文的代码都是PyQt版本号都是上面的，没有特别的理由，会一直维持在这个版本号里面了。
-
-### 安装pyqt4<a id="orgheadline3"></a>
-
-安装pyqt4大致过程类似上面，只是一些细节上的改动了，比如:
-
-ubuntu下安装pyqt4即：
-
-```sh
-sudo apt-get install python3-pyqt4
-```
-
-如果你需要使用qt designer来辅助设计GUI，你还需要额外安装qt designer软件和pyuic4和pyrcc4命令。（顺便再次提醒下pyrcc4对中文目录目前支持有问题（201410））
-
-```sh
-sudo apt-get install pyqt4-dev-tools qt4-designer
-```
-
-检查pyqt4安装情况执行以下脚本即可，显示的是当前安装的pyqt4的版本号:
-
-```python
-from PyQt4.QtCore import QT_VERSION_STR
-print(QT_VERSION_STR)
-```
