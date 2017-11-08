@@ -317,41 +317,10 @@ git clone https://gitorious.org/qt/qttranslations.git
 
 ts文件如前所述用 **lrelease** 命令处理以下，或者直接用语言工具打开然后发布即可。
 
-# 附录<a id="orgheadline50"></a>
 
-## PyQt4和PyQt5的区别整理<a id="orgheadline46"></a>
 
-- 很多pyqt4原放在QtGui里面的一些QWidget在pyqt5里面都放入QtWidgets里面去了。一个简单的解决兼容性问题的方案就是在pyqt4里面引入的时候写上:
-
-from PyQt4.QtGui import *
-
-在pyqt5里面引入的时候写上:
-
-from PyQt5.QtGui import *
-from PyQt5.QtWidgets import *
-
-## 引用信号发射对象<a id="orgheadline47"></a>
+## 引用信号发射对象
 
 `sender` 方法来自GObject，所以一般Qt里的窗体对象都可以用。其用法主要在槽里面，调用 `self.sender()` ，即返回一个发射该信号从而调用该槽的对象。
 
-## 菜单栏看不见？<a id="orgheadline48"></a>
 
-不过可能你会遇到麻烦，我就折腾了好久，因为菜单栏总是显示不出来，然后才发现是系统环境的问题，我在GNOME下看不到pyqt5做的软件的菜单栏了，但是到Ubuntu默认的Unity环境下最上面的面板就是菜单栏了，这个值得说一下。
-
-如果你在Unity环境（Ubuntu14.04）下，那么不需要做什么，如果你在gnome或者KDE上，那么qt5的菜单栏可能会显示不出来，你需要删除下面这个小东西。
-
-```sh
-sudo apt-get remove appmenu-qt5
-```
-
-把这个小软件删除，pyqt5上的菜单栏就能正常显示了，不过在unity环境下菜单栏不会显示在最上面的面板上了，而是常规的在图形GUI标题栏下面了。
-
-## 参考资料<a id="orgheadline49"></a>
-
-1. pyqt4教程，[PyQt4\_Tutorial](http://blog.cx125.com/books/PyQt4_Tutorial/)
-
-2. Rapid GUI Programming with Python and Qt , 书籍的源码
-
-3. C++-GUI-Programming-with-Qt-4-Second Edition 书籍的源码
-
-4. [PyQt4各个类参考](http://pyqt.sourceforge.net/Docs/PyQt4/classes.html)
