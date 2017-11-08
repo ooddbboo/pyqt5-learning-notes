@@ -1,10 +1,10 @@
-# 快捷键和Tab键管理<a id="orgheadline42"></a>
+# 快捷键和Tab键管理
 
-## 什么是伙伴关系<a id="orgheadline39"></a>
+## 什么是伙伴关系
 
 一般是通过QLabel的setBuddy方法来关联某个输入窗体。然后QLabel有一个快捷键，当你按下这个快捷键，输入焦点就会转到这个QLabel对应的伙伴输入窗体上。
 
-## 快捷键<a id="orgheadline40"></a>
+## 快捷键
 
 QShortcut类
 
@@ -14,15 +14,15 @@ QShortcut类
 
 然后QAction有方法
 
-## QKeySequence<a id="orgheadline41"></a>
+## QKeySequence
 
 `QKeySequence` 类在pyqt4和pyqt5中来自QtGui子模块，是快捷键的解决方案。比如可以直接引用 `QKeySequence.Open` 来表示快捷键Ctrl+O。可用的构造函数如下所示：
-
+```
 QKeySequence(QKeySequence.Print)
 QKeySequence(tr("Ctrl+P"))
 QKeySequence(tr("Ctrl+p"))
 QKeySequence(Qt.CTRL + Qt.Key_P)
-
+```
 我不太喜欢第一种表达方式，不是任何软件都有打印操作，况且打印和某个快捷键之间并没有逻辑联系，只有程序员的个人使用经验，这是不小的记忆负担。我比较喜欢第四种写法，看上去意义更加清晰，Qt来自QtCore子模块。
 
 字母按键就是类似 `Qt.Key_W` 这样的形式，Shift按键是Qt.SHIFT，Meta按键是Qt.META，CTRL按键是 `Qt.CTRL` ，ALT按键是 `Qt.ALT` 。

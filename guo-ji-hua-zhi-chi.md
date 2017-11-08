@@ -1,42 +1,37 @@
-# 国际化支持<a id="orgheadline45"></a>
-
+# 国际化支持
 本小节参考资料除了官方文档之外还有[这个网站](http://plashless.wordpress.com/2014/02/01/internationalizing-python-pyqt-apps/) 。
 
 这里指的pyqt的软件国际化支持主要是指i18n，也就是两种语言，英语和本土语言。其中软件的字符串都是英语，然后用 `self.tr()` 封装。
 
 然后在你的项目里新建一个translations文件夹，新建如下一个小文件 `wise.pro` ，这里的wise是你的模块具体的名字，随意修改之。这个文件的内容简要如下：
-
+```
 SOURCES += ../main.py ../__init__.py \
 ../Widgets/__init__.py
 TRANSLATIONS += wise_zh_CN.ts
-
+```
 SOURCES 是你希望扫描的py文件，如果该文件有前面所说的self.tr()封装，那么里面的字符串pylupdate5工具就可以扫描出来。这里支持路径的相对表达。但是不支持glob语法。
 
 第二个变量就是TRANSLATIONS就是你希望生成的目标翻译ts文件的文件名，一般是如下格式：
-
+```
 {PROJECT_NAME}_{QLocale.system().name()}.ts
-
+```
 其中PROJECT\_NAME是你项目的名字，而QLocale.system().name()是你当前机器所用的目标语言简写，你可以在python3的eval模式下查看一下：
-
+```
 >>> from PyQt5.QtCore import QLocale
 >>> QLocale.system().name()
 'zh_CN'
-
+```
 然后你需要用pylupdate5小工具处理该pro文件：
 
 ```sh
 pylupdate5 wise.pro
 ```
 
-这样你就可以看到生成的 `wise_zh_CH.ts` 文件了，然后请确保安装了qt4-dev-tools，
+这样你就可以看到生成的 `wise_zh_CH.ts` 文件了。
 
-```sh
-sudo apt-get install qt4-dev-tools
-```
+`
 
-这样你就可以双击打开ts文件，操作很简单，看见对应的英文单词，然后填上相应的中文解释。操作玩了点击发布，即看到生成的qm文件，或者使用命令行工具 **lrelease** 。
-
-## 使用翻译文件<a id="orgheadline43"></a>
+## 使用翻译文件
 
 样例如下：
 
@@ -53,7 +48,7 @@ myapp.installTranslator(translator)
 
 最后你的主母窗口myapp使用installTranslator方法把这个QTranslator对象加进去即可。
 
-## 使用qt官方翻译文件<a id="orgheadline44"></a>
+## 使用qt官方翻译文件
 
 有些qt窗体内部文字可能不好DIY，这时需要如上一样加载qt的官方翻译文件。代码如下所示：
 
