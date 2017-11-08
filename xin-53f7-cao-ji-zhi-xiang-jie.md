@@ -39,13 +39,13 @@ window.setLayout(layout)
 window.show()
 
 sys.exit(app.exec_())
+
 ```
 
 第16行将spinBox的 `valueChanged` 信号和slider的 `setValue` 槽连接起来了，其中QSpinBox内置的 `valueChanged` 信号发射自带的一个参数就是改变后的值，这个值传递给了QSlider的内置槽 `setValue` ，从而将slider的值设置为新值。第17行如果slider的值发生了改变，那么会发送valueChanged信号，然后又传递给了spinBox，并执行了内置槽setValue，由于此时的值即为原值，这样spinBox内的值就没有发生改变了，如此程序不会陷入死循环。
 
-## 自定义信号<a id="orgheadline19"></a>
-
-正如前所述及自定义信号由PyQt5.QtCore.pyqtSingal（在pyqt4下是PyQt4.QtCore.pyqtSingal。）方法创建，具体格式如下：
+## 自定义信号
+正如前所述及自定义信号由 `PyQt5.QtCore.pyqtSingal` 方法创建，具体格式如下：
 
 ```python
 from PyQt5.QtCore import QObject, pyqtSignal
@@ -61,7 +61,7 @@ range_changed = pyqtSignal(int, int, name='rangeChanged')
 
 注意信号必须定义为类的属性，同时必须是GObject的子类。
 
-## 自定义槽<a id="orgheadline20"></a>
+## 自定义槽
 
 按照python格式自己定义的函数就是所谓的自定义槽了。不过推荐用pyqt的槽装饰器来定义槽。
 
@@ -100,90 +100,95 @@ pass
 
 这里定义了两个槽，名字都叫做valueChanged，一个接受int类型，一个接受QString类型，同前面信号的overload一样，在python中不推荐这么使用，还是明晰一点比较好。
 
-## 发射信号<a id="orgheadline21"></a>
+## 发射信号
 
 信号对象有emit方法用来发射信号，然后信号对象还有disconnect方法断开某个信号和槽的连接。
 
 一个信号可以连接多个槽，多个信号可以连接同一个槽，一个信号可以与另外一个信号相连接。
 
 下面通过一个例子详解自建信号还有自建槽并建立发射机制的情况。
-
+【singal-slot/FindDialog】
 ```python
+
 from PyQt5.QtWidgets import QDialog,QLabel,QLineEdit,QCheckBox,QPushButton,QHBoxLayout,QVBoxLayout,QApplication
-from PyQt5.QtCore import Qt ,pyqtSignal,QObject,pyqtSlot
+from PyQt5.QtCore import  Qt ,pyqtSignal,QObject,pyqtSlot
 
 
 class FindDialog(QDialog):
-findNext = pyqtSignal(str,Qt.CaseSensitivity)
-findPrevious = pyqtSignal(str,Qt.CaseSensitivity)
+    findNext = pyqtSignal(str,Qt.CaseSensitivity)
+    findPrevious = pyqtSignal(str,Qt.CaseSensitivity)
 
-def __init__(self,parent=None):
-super().__init__(parent)
-label = QLabel(self.tr("Find &amp;what:"))
-self.lineEdit = QLineEdit()
-label.setBuddy(self.lineEdit)
+    def __init__(self,parent=None):
+        super().__init__(parent)
+        label = QLabel(self.tr("Find &what:"))
+        self.lineEdit = QLineEdit()
+        label.setBuddy(self.lineEdit)
 
-self.caseCheckBox=QCheckBox(self.tr("Match &amp;case"))
-self.backwardCheckBox=QCheckBox(self.tr("Search &amp;backward"))
-self.findButton = QPushButton(self.tr("&amp;Find"))
-self.findButton.setDefault(True)
-self.findButton.setEnabled(False)
-closeButton=QPushButton(self.tr("Close"))
+        self.caseCheckBox=QCheckBox(self.tr("Match &case"))
+        self.backwardCheckBox=QCheckBox(self.tr("Search &backward"))
+        self.findButton = QPushButton(self.tr("&Find"))
+        self.findButton.setDefault(True)
+        self.findButton.setEnabled(False)
+        closeButton=QPushButton(self.tr("Close"))
 
-self.lineEdit.textChanged.connect(self.enableFindButton)
-self.findButton.clicked.connect(self.findClicked)
-closeButton.clicked.connect(self.close)
+        self.lineEdit.textChanged.connect(self.enableFindButton)
+        self.findButton.clicked.connect(self.findClicked)
+        closeButton.clicked.connect(self.close)
 
-topLeftLayout=QHBoxLayout()
-topLeftLayout.addWidget(label)
-topLeftLayout.addWidget(self.lineEdit)
-leftLayout=QVBoxLayout()
-leftLayout.addLayout(topLeftLayout)
-leftLayout.addWidget(self.caseCheckBox)
-leftLayout.addWidget(self.backwardCheckBox)
-rightLayout = QVBoxLayout()
-rightLayout.addWidget(self.findButton)
-rightLayout.addWidget(closeButton)
-rightLayout.addStretch()
-mainLayout=QHBoxLayout()
-mainLayout.addLayout(leftLayout)
-mainLayout.addLayout(rightLayout)
-self.setLayout(mainLayout)
+        topLeftLayout=QHBoxLayout()
+        topLeftLayout.addWidget(label)
+        topLeftLayout.addWidget(self.lineEdit)
+        leftLayout=QVBoxLayout()
+        leftLayout.addLayout(topLeftLayout)
+        leftLayout.addWidget(self.caseCheckBox)
+        leftLayout.addWidget(self.backwardCheckBox)
+        rightLayout = QVBoxLayout()
+        rightLayout.addWidget(self.findButton)
+        rightLayout.addWidget(closeButton)
+        rightLayout.addStretch()
+        mainLayout=QHBoxLayout()
+        mainLayout.addLayout(leftLayout)
+        mainLayout.addLayout(rightLayout)
+        self.setLayout(mainLayout)
 
-self.setWindowTitle(self.tr("Find"))
-self.setFixedHeight(self.sizeHint().height())
+        self.setWindowTitle(self.tr("Find"))
+        self.setFixedHeight(self.sizeHint().height())
 
 
-def enableFindButton(self,text):
-self.findButton.setEnabled(bool(text))
-@pyqtSlot()
-def findClicked(self):
-text = self.lineEdit.text()
-if self.caseCheckBox.isChecked():
-cs=Qt.CaseSensitive
-else:
-cs=Qt.CaseInsensitive
+    def enableFindButton(self,text):
+        self.findButton.setEnabled(bool(text))
+    @pyqtSlot()
+    def findClicked(self):
+        text = self.lineEdit.text()
+        if self.caseCheckBox.isChecked():
+            cs=Qt.CaseSensitive
+        else:
+            cs=Qt.CaseInsensitive
 
-if self.backwardCheckBox.isChecked():
-self.findPrevious.emit(text,cs)
-else:
-self.findNext.emit(text,cs)
+        if self.backwardCheckBox.isChecked():
+            self.findPrevious.emit(text,cs)
+        else:
+            self.findNext.emit(text,cs)
 
 
 
 if __name__ == '__main__':
-import sys
-app=QApplication(sys.argv)
-findDialog = FindDialog()
-def find(text,cs):
-print('find:',text,'cs',cs)
-def findp(text,cs):
-print('findp:',text,'cs',cs)
+    import sys
+    app=QApplication(sys.argv)
+    findDialog = FindDialog()
+    def find(text,cs):
+        print('find:',text,'cs',cs)
+    def findp(text,cs):
+        print('findp:',text,'cs',cs)
 
-findDialog.findNext.connect(find)
-findDialog.findPrevious.connect(findp)
-findDialog.show()
-sys.exit(app.exec_())
+    findDialog.findNext.connect(find)
+    findDialog.findPrevious.connect(findp)
+    findDialog.show()
+    sys.exit(app.exec_())
+
+
+
+
 ```
 
 首先自建的信号必须是类的属性，然后这个类必须是QObject的子类，这里QDialog是继承自QObject的。请看到第9行和第10行，通过pyqtSignal函数来自建信号，此信号有两个参数，一个是str字符变量，一个是Qt.CaseSensitivity的枚举值。假设我们输入一些文字了，然后点击Find按钮，请看到第26行，点击之后将执行findClicked槽，按钮的clicked信号是不带参数的。所以后面定义的findClicked槽（简单的函数也可以）也没有任何参数。
