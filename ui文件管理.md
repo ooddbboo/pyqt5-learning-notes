@@ -4,9 +4,9 @@
 
 推荐是用 `pyuic5` 处理来输出ui文件对应的py文件。大体是利用如下命令行： 
 
-```
-'pyuic5 {filename}.ui -o {filename}_ui.py --import-from={project}'.format(filename=filename,
-                                                                                 project=PROJECT)
+```python
+pyuic5 {filename}.ui -o {filename}_ui.py --import-from={project}'.format(filename=filename,
+																project=PROJECT)
 ```
 
 这里的 `--import-from` 选项影响输出py文件的资源引入语句，默认是 `import main_rc` ，设置这个选项之后更改为：
@@ -17,7 +17,7 @@
 
 
 
-```
+```python
 from .uis.main_ui import Ui_MainWindow
 
 class MainWindow(QMainWindow):

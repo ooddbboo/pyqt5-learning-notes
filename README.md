@@ -1,5 +1,7 @@
 # pyqt5学习笔记
 
+本项目gitbook原地址在 [这里](https://a358003542.gitbooks.io/pyqt5-learning-notes) 。
+
 历史原因以前学过一段时间，现在重拾说起来本文算是第三次修订了。
 
 1. 本文完全基于python3和pyqt5，也就是关于qt4的讨论全部删去了。
