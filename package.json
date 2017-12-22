@@ -1,0 +1,16 @@
+{
+  "name": "pyqt5-learning-notes",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:a358003542/pyqt5-learning-notes.git",
+  "author": "wanze <a358003542@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "gh-pages": "^1.1.0"
+  },
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d _book",
+    "build": "gitbook build"
+    }
+}
