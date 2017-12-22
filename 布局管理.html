@@ -1,0 +1,516 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>布局管理 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="资源文件管理.html" />
+    
+    
+    <link rel="prev" href="信号-槽机制详解.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="第一个例子.html">
+            
+                <a href="第一个例子.html">
+            
+                    
+                    第一个例子
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="信号-槽机制详解.html">
+            
+                <a href="信号-槽机制详解.html">
+            
+                    
+                    信号-槽机制详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4" data-path="布局管理.html">
+            
+                <a href="布局管理.html">
+            
+                    
+                    布局管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="资源文件管理.html">
+            
+                <a href="资源文件管理.html">
+            
+                    
+                    资源文件管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="配置文件管理.html">
+            
+                <a href="配置文件管理.html">
+            
+                    
+                    配置文件管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="ui文件管理.html">
+            
+                <a href="ui文件管理.html">
+            
+                    
+                    ui文件管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="快捷键管理.html">
+            
+                <a href="快捷键管理.html">
+            
+                    
+                    快捷键管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="国际化支持.html">
+            
+                <a href="国际化支持.html">
+            
+                    
+                    国际化支持
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="附录.html">
+            
+                <a href="附录.html">
+            
+                    
+                    附录
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="附录/安装和配置.html">
+            
+                <a href="附录/安装和配置.html">
+            
+                    
+                    安装和配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="附录/exe制作和安装程序制作.html">
+            
+                <a href="附录/exe制作和安装程序制作.html">
+            
+                    
+                    exe制作和安装程序制作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="附录/参考资料.html">
+            
+                <a href="附录/参考资料.html">
+            
+                    
+                    参考资料
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >布局管理</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x5E03;&#x5C40;&#x7BA1;&#x7406;">&#x5E03;&#x5C40;&#x7BA1;&#x7406;</h1>
+<p>&#x5E03;&#x5C40;&#x7BA1;&#x7406;&#x662F;GUI&#x8BBE;&#x8BA1;&#x4E2D;&#x4E0D;&#x53EF;&#x56DE;&#x907F;&#x7684;&#x4E00;&#x4E2A;&#x8BDD;&#x9898;&#xFF0C;&#x8FD9;&#x91CC;&#x8BE6;&#x7EC6;&#x8BA8;&#x8BBA;&#x4E0B;pyqt&#x7684;&#x5E03;&#x5C40;&#x7BA1;&#x7406;&#x3002;&#x6B63;&#x5982;&#x524D;&#x6240;&#x8FF0;&#x53CA;&#xFF0C;pyqt5&#x7528;&#x4E8E;&#x5E03;&#x5C40;&#x7BA1;&#x7406;&#x7684;&#x7C7B;&#x90FD;&#x79FB;&#x5230;&#x4E86;QtWidgets&#x5B50;&#x6A21;&#x5757;&#x90A3;&#x91CC;&#x4E86;&#xFF0C;&#x9996;&#x5148;&#x662F;&#x6700;&#x57FA;&#x672C;&#x7684; <code>QHBoxLayout</code> &#x548C; <code>QVBoxLayout</code> &#x3002;</p>
+<h2 id="qboxlayout">QBoxLayout</h2>
+<p><code>QHBoxLayout</code> &#x548C; <code>QVBoxLayout</code> &#x4E00;&#x4E2A;&#x662F;&#x6A2A;&#x5411;&#x6392;&#x5E03;&#xFF0C;&#x4E00;&#x4E2A;&#x662F;&#x7AD6;&#x5411;&#x6392;&#x5E03;&#x3002;&#x5B83;&#x4EEC;&#x7684;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<pre><code class="lang-python">mainLayout=QHBoxLayout()
+mainLayout.addWidget(button1)
+mainLayout.addWidget(button2)
+self.setLayout(mainLayout)
+</code></pre>
+<p>Layout&#x5BF9;&#x8C61;&#x5C31;&#x597D;&#x50CF;&#x4E00;&#x4E2A;&#x5C01;&#x88C5;&#x5668;&#xFF0C;Layout&#x91CC;&#x9762;&#x8FD8;&#x53EF;&#x4EE5;&#x6709;Layout&#xFF0C;&#x5F53;&#x7136;&#x8FD8;&#x6709;&#x5176;&#x4ED6;&#x4E00;&#x4E9B;&#x7A97;&#x4F53;&#x5B50;&#x5355;&#x5143;&#xFF0C;&#x90FD;&#x901A;&#x8FC7; <code>addWidget</code> &#x65B9;&#x6CD5;&#x6765;&#x786E;&#x7ACB;&#x5C01;&#x88C5;&#x5173;&#x7CFB;&#x3002;&#x6700;&#x540E;&#x4E3B;&#x6BCD;&#x7A97;&#x53E3;&#x4E3B;&#x8981;&#x63A5;&#x53D7;&#x4E00;&#x4E2A;Layout&#x5BF9;&#x8C61;&#xFF0C;&#x4F7F;&#x7528;&#x7684;&#x662F; <code>setLayout</code> &#x65B9;&#x6CD5;&#x3002;</p>
+<p>&#x3010;layout/hello&#x3011;</p>
+<pre><code class="lang-python">
+<span class="hljs-keyword">from</span> PyQt5.QtWidgets <span class="hljs-keyword">import</span> QApplication,QWidget,QLabel,QVBoxLayout,QPushButton,QLineEdit, QMessageBox
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Form</span><span class="hljs-params">(QWidget)</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self)</span>:</span>
+        super().__init__()
+        nameLabel = QLabel(<span class="hljs-string">&quot;Name:&quot;</span>)
+        self.nameLine = QLineEdit()
+        self.submitButton = QPushButton(<span class="hljs-string">&quot;Submit&quot;</span>)
+        bodyLayout = QVBoxLayout()
+        bodyLayout.addWidget(nameLabel)
+        bodyLayout.addWidget(self.nameLine)
+        bodyLayout.addWidget(self.submitButton)
+
+        self.submitButton.clicked.connect(self.submit)
+
+        self.setLayout(bodyLayout)
+        self.setWindowTitle(<span class="hljs-string">&quot;Hello Qt&quot;</span>)
+        self.show()
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">submit</span><span class="hljs-params">(self)</span>:</span>
+        name = self.nameLine.text()
+
+        <span class="hljs-keyword">if</span> name == <span class="hljs-string">&quot;&quot;</span>:
+            QMessageBox.information(self, <span class="hljs-string">&quot;Empty Field&quot;</span>,
+                                    <span class="hljs-string">&quot;Please enter a name.&quot;</span>)
+            <span class="hljs-keyword">return</span>
+        <span class="hljs-keyword">else</span>:
+            QMessageBox.information(self, <span class="hljs-string">&quot;Success!&quot;</span>,
+                                    <span class="hljs-string">&quot;Hello %s!&quot;</span> % name)
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    <span class="hljs-keyword">import</span> sys
+    app = QApplication(sys.argv)
+    screen = Form()
+    sys.exit(app.exec_())
+</code></pre>
+<h2 id="addstretch&#x65B9;&#x6CD5;">addStretch&#x65B9;&#x6CD5;</h2>
+<p>&#x63D2;&#x5165;&#x4E00;&#x4E2A;&#x5206;&#x9694;&#x7B26;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BBE;&#x8BA1;&#x5668;&#x91CC;&#x9762;&#x7684;&#x5F39;&#x7C27;&#x3002;</p>
+<h2 id="qgridlayout">QGridLayout</h2>
+<p>&#x5728;tkinter&#x4E2D;&#x6709;&#x4E2A;grid&#x65B9;&#x6CD5;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x7F51;&#x683C;&#x5E03;&#x5C40;&#xFF0C;&#x540C;&#x6837;pyqt&#x4E2D;&#x4E5F;&#x6709;&#x4E2A;&#x7F51;&#x683C;&#x5E03;&#x5C40;&#x5BF9;&#x8C61;QGridLayout&#x3002;QGridLayout&#x7684;&#x7528;&#x6CD5;&#x548C;&#x4E0A;&#x9762;QBoxLayout&#x7C7B;&#x4F3C;&#xFF0C;&#x9664;&#x4E86; <strong>addWidget</strong> &#x65B9;&#x6CD5;&#x540E;&#x9762;&#x8FD8;&#x53EF;&#x4EE5;&#x63A5;&#x53D7;&#x4E24;&#x4E2A;&#x989D;&#x5916;&#x7684;&#x53C2;&#x6570;&#x8868;&#x793A;&#x51E0;&#x884C;&#x51E0;&#x5217;&#x3002;</p>
+<p>&#x8BF7;&#x770B;&#x5230;&#x4E0B;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x3002;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x5F88;&#x597D;&#x5730;&#x6F14;&#x793A;&#x4E86;QGridLayout&#x7684;&#x4F7F;&#x7528;&#x3002;&#x5176;&#x4E2D; <code>(i-1)//3</code> &#x5373;&#x8BE5;&#x6570;&#x5BF9;3&#x53D6;&#x5546;&#xFF0C;&#x672C;&#x6765;&#x7684;1 2 3 4 5 6&#x2026;&#x5C06;&#x53D8;&#x6210;0 0 0 1 1 1 2 2 2&#x2026;&#x6B63;&#x597D;&#x5BF9;&#x5E94;&#x7F51;&#x683C;&#x4E2D;&#x7684;&#x51E0;&#x884C;&#xFF0C;&#x800C; (i-1)%3 &#x5373;&#x8BE5;&#x6570;&#x5BF9;3&#x53D6;&#x4F59;&#xFF0C;&#x672C;&#x6765;&#x7684;1 2 3 4 5 6&#x2026;&#x5C06;&#x53D8;&#x6210;0 1 2 0 1 2 0 1 2&#x2026;&#x6B63;&#x597D;&#x5BF9;&#x5E94;&#x7F51;&#x683C;&#x4E2D;&#x7684;&#x51E0;&#x5217;&#x7684;&#x6982;&#x5FF5;&#x3002;</p>
+<p>&#x3010;layout/gridlayout&#x3011;</p>
+<pre><code class="lang-python">
+<span class="hljs-keyword">from</span> PyQt5.QtWidgets <span class="hljs-keyword">import</span> QApplication,QWidget,QPushButton,QGridLayout
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Form</span><span class="hljs-params">(QWidget)</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self)</span>:</span>
+        super().__init__()
+        bodyLayout = QGridLayout()
+        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">1</span>,<span class="hljs-number">10</span>):
+            button = QPushButton(str(i))
+            bodyLayout.addWidget(button,(i<span class="hljs-number">-1</span>)//<span class="hljs-number">3</span>,(i<span class="hljs-number">-1</span>)%<span class="hljs-number">3</span>)
+            print(i,(i<span class="hljs-number">-1</span>)//<span class="hljs-number">3</span>,(i<span class="hljs-number">-1</span>)%<span class="hljs-number">3</span>)
+        self.setLayout(bodyLayout)
+        self.setWindowTitle(<span class="hljs-string">&quot;the grid layout&quot;</span>)
+        self.show()
+
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    <span class="hljs-keyword">import</span> sys
+    app = QApplication(sys.argv)
+    screen = Form()
+    sys.exit(app.exec_())
+</code></pre>
+<h2 id="qformlayout">QFormLayout</h2>
+<p>QFormLayout&#xFF0C;&#x8868;&#x5355;&#x5E03;&#x5C40;&#xFF0C;&#x5E38;&#x7528;&#x4E8E;&#x63D0;&#x4EA4;&#x67D0;&#x4E2A;&#x914D;&#x7F6E;&#x4FE1;&#x606F;&#x7684;&#x8868;&#x5355;&#x3002;</p>
+<p>&#x8BF7;&#x770B;&#x5230;&#x4E0B;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x3002;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x6765;&#x81EA;pyqt5&#x6E90;&#x7801;examples&#x6587;&#x4EF6;&#x5939;layouts&#x6587;&#x4EF6;&#x5939;&#x91CC;&#x9762;&#x7684;basiclayouts.py&#x6587;&#x4EF6;&#xFF0C;&#x505A;&#x4E86;&#x7B80;&#x5316;&#x4E3B;&#x8981;&#x7528;&#x4E8E;&#x6F14;&#x793A;&#x8868;&#x5355;&#x5E03;&#x5C40;&#x3002;</p>
+<p>&#x3010;layout/basiclayouts&#x3011;</p>
+<pre><code class="lang-python">
+<span class="hljs-keyword">from</span> PyQt5.QtWidgets <span class="hljs-keyword">import</span> (QApplication, QDialog,QDialogButtonBox, QFormLayout, QGroupBox,QLabel, QLineEdit, QSpinBox,QVBoxLayout,QTextEdit)
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Dialog</span><span class="hljs-params">(QDialog)</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self)</span>:</span>
+        super().__init__()
+        self.createFormGroupBox()
+        buttonBox = QDialogButtonBox(QDialogButtonBox.Ok | QDialogButtonBox.Cancel)
+        buttonBox.accepted.connect(self.accept)
+        buttonBox.rejected.connect(self.reject)
+        mainLayout = QVBoxLayout()
+        mainLayout.addWidget(self.formGroupBox)
+        mainLayout.addWidget(buttonBox)
+        self.setLayout(mainLayout)
+        self.setWindowTitle(<span class="hljs-string">&quot;user info&quot;</span>)
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">createFormGroupBox</span><span class="hljs-params">(self)</span>:</span>
+        self.formGroupBox = QGroupBox(<span class="hljs-string">&quot;your infomation&quot;</span>)
+        layout = QFormLayout()
+        layout.addRow(QLabel(<span class="hljs-string">&quot;name:&quot;</span>), QLineEdit())
+        layout.addRow(<span class="hljs-string">&quot;age:&quot;</span>, QSpinBox())
+        layout.addRow(QLabel(<span class="hljs-string">&quot;other infomation:&quot;</span>), QTextEdit())
+        self.formGroupBox.setLayout(layout)
+
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    <span class="hljs-keyword">import</span> sys
+    app = QApplication(sys.argv)
+    dialog = Dialog()
+    sys.exit(dialog.exec_())
+</code></pre>
+<p>&#x8FD9;&#x91CC; <code>QDialog</code> &#x7C7B;&#x548C; <code>QDialogButtonBox</code> &#x7C7B;&#x6211;&#x4EEC;&#x4E14;&#x4E0D;&#x53BB;&#x7BA1;&#x4ED6;&#xFF0C;QDialog&#x7C7B;&#x548C;&#x4E0B;&#x9762;&#x7684;accept&#x548C;reject&#x65B9;&#x6CD5;&#x6709;&#x5173;&#xFF0C;&#x800C;QDialogButtonBox&#x548C;&#x6700;&#x4E0B;&#x9762;&#x7684;&#x4E24;&#x4E2A;&#x6309;&#x94AE;&#x548C;&#x7ED1;&#x5B9A;&#x7684;&#x559C;&#x597D;accepted&#x548C;rejected&#x6709;&#x5173;&#x3002;</p>
+<p>&#x7136;&#x540E;&#x6211;&#x4EEC;&#x770B;&#x5230;&#x4E0B;&#x9762;&#x521B;&#x5EFA;&#x8868;&#x5355;&#x7684;&#x90A3;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x5176;&#x4E2D; <code>QGroupBox</code> &#x4E5F;&#x662F;&#x4E00;&#x4E2A;&#x7A97;&#x4F53;&#x7C7B;&#x578B;&#xFF0C;&#x5E26;&#x6709;&#x6807;&#x9898;&#x3002;&#x63A5;&#x4E0B;&#x6765;&#x5C31;&#x662F;QFormLayout&#x8868;&#x5355;&#x5E03;&#x5C40;&#x7684;&#x6838;&#x5FC3;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code class="lang-python">layout = QFormLayout()
+
+layout.addRow(QLabel(<span class="hljs-string">&quot;name:&quot;</span>), QLineEdit())
+
+layout.addRow(QLabel(<span class="hljs-string">&quot;age:&quot;</span>), QSpinBox())
+
+layout.addRow(QLabel(<span class="hljs-string">&quot;other infomation:&quot;</span>), QTextEdit())
+
+self.formGroupBox.setLayout(layout)
+</code></pre>
+<p>&#x6211;&#x4EEC;&#x770B;&#x5230;&#x524D;&#x9762;&#x7684;layout&#x7684;&#x521B;&#x5EFA;&#x548C;&#x540E;&#x9762;&#x6BCD;&#x7A97;&#x4F53;&#x4F7F;&#x7528;&#x672C;layout&#x7684; <code>setLayout</code> &#x65B9;&#x6CD5;&#x548C;&#x524D;&#x9762;&#x4E24;&#x4E2A;&#x5E03;&#x5C40;&#x90FD;&#x662F;&#x7C7B;&#x4F3C;&#x7684;&#xFF0C;&#x9664;&#x4E86;&#x8868;&#x5355;&#x5E03;&#x5C40;&#x662F;&#x4E00;&#x884C;&#x884C;&#x7684;&#xFF0C;&#x5B83;&#x7684;&#x65B9;&#x6CD5;&#x4E0D;&#x662F;addWidget&#xFF0C;&#x800C;&#x662F; <code>addRow</code> &#xFF0C;&#x7136;&#x540E;addRow&#x65B9;&#x6CD5;&#x4E25;&#x683C;&#x610F;&#x4E49;&#x4E0A;&#x53EF;&#x4EE5;&#x63A5;&#x53D7;&#x4E24;&#x4E2A;&#x7A97;&#x4F53;&#x7C7B;&#x578B;&#xFF08;&#x5305;&#x62EC;layout&#x7C7B;&#x578B;&#xFF09;&#xFF0C; <span class="underline">&#x53E6;&#x5916;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x8FD8;&#x53EF;&#x4EE5;&#x662F;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x5373;&#x663E;&#x793A;&#x7684;&#x6587;&#x5B57;</span> &#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="信号-槽机制详解.html" class="navigation navigation-prev " aria-label="Previous page: 信号-槽机制详解">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="资源文件管理.html" class="navigation navigation-next " aria-label="Next page: 资源文件管理">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"布局管理","level":"1.4","depth":1,"next":{"title":"资源文件管理","level":"1.5","depth":1,"path":"资源文件管理.md","ref":"资源文件管理.md","articles":[]},"previous":{"title":"信号-槽机制详解","level":"1.3","depth":1,"path":"信号-槽机制详解.md","ref":"信号-槽机制详解.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"布局管理.md","mtime":"2017-12-16T07:12:30.362Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-12-22T13:55:45.693Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
